@@ -1,13 +1,10 @@
-# Catálogo de proyectos
+# Proyectos
 
-Los proyectos públicos destacados están enlazados en el [README principal](../README.md).
+| Proyecto | Enfoque | Presentación |
+| --- | --- | --- |
+| **Cuestion.me** | Backend Java, aplicación Full Stack, seguridad, persistencia y cloud | [Caso de estudio](cuestionme/README.md) |
+| **Web Kuuii** | Frontend React, diseño responsive y presencia comercial | [Caso de estudio](web-kuuii/README.md) |
 
-## Agregar un caso de estudio
+Cuestion.me es el proyecto principal. Su código permanece privado; la documentación pública describe su funcionamiento y decisiones de ingeniería.
 
-1. Crear una carpeta con un nombre descriptivo: `projects/nombre-del-proyecto/`.
-2. Copiar la [plantilla](../docs/project-template.md) como `README.md` dentro de esa carpeta.
-3. Completarla con información verificable y enlaces al repositorio público y a la demo, si existe.
-4. Guardar las capturas en `assets/nombre-del-proyecto/` y enlazarlas desde el caso de estudio.
-5. Agregar el enlace al README principal.
-
-Publicar únicamente material propio o autorizado. Usar datos ficticios en capturas y ejemplos; excluir credenciales, datos personales y código de repositorios privados.
+Para incorporar futuros casos de estudio, usar la [plantilla](../docs/project-template.md), respaldar las afirmaciones con implementación verificable y emplear datos ficticios en capturas.

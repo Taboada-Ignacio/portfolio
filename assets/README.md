@@ -1,5 +1,8 @@
 # Material visual
 
-Organizar capturas y diagramas por proyecto: `assets/nombre-del-proyecto/`.
+- [Cuestion.me: capturas pendientes y criterios de privacidad](cuestionme/README.md).
+- [Web Kuuii: capturas pendientes](web-kuuii/README.md).
 
-Usar nombres descriptivos y enlazar cada imagen desde el caso de estudio correspondiente. Verificar que no muestre credenciales, datos personales, información de pacientes ni otros datos privados. Utilizar datos ficticios y material propio o con autorización.
+Los dos diagramas Mermaid de Cuestion.me están incluidos directamente en su [caso de estudio](../projects/cuestionme/README.md) y se adaptan al tema de GitHub.
+
+Solo se incorporará material auténtico, propio o autorizado. Usar datos ficticios y excluir credenciales, información personal y datos reservados.
