@@ -6,8 +6,6 @@ Bienvenido a mi portafolio profesional. Este repositorio reúne mis proyectos p�
 
 | Proyecto | Repositorio |
 | --- | --- |
-| Appointment Management System | [Ver proyecto](https://github.com/Taboada-Ignacio/appointment-management-system) |
-| Servicio de usuarios genérico | [Ver proyecto](https://github.com/Taboada-Ignacio/Servicio-Usuarios-Generico) |
 | Sitio web Kuuii | [Ver proyecto](https://github.com/Taboada-Ignacio/first-web-site-proyect-Kuuii) |
 
 ## Organización
