@@ -2,7 +2,7 @@
 
 | Proyecto | Enfoque | Presentación |
 | --- | --- | --- |
-| **TPAI-Bolsines** | Aplicación Full Stack académica, seguimiento GPS, patrón Adapter, mapa interactivo y persistencia | [Caso de estudio](tpai-bolsines/README.md) · [Código](https://github.com/Taboada-Ignacio/TPAI-Bolsines) |
+| **TPAI-Bolsines** | Aplicación Full Stack (main): CU 36, mapa de rutas, tres adaptadores GPS, selector opcional y PostgreSQL | [Caso de estudio](tpai-bolsines/README.md) · [Código](https://github.com/Taboada-Ignacio/TPAI-Bolsines) |
 | **SYZA · Estética integral** | Landing comercial con React, TypeScript, Tailwind CSS, animación y 3D | [Caso de estudio](syza/README.md) |
 | **Cuestion.me** | Backend Java, aplicación Full Stack, seguridad, persistencia y cloud | [Caso de estudio](cuestionme/README.md) |
 | **Web Kuuii** | Frontend React, diseño responsive y presencia comercial | [Caso de estudio](web-kuuii/README.md) |
