@@ -3,7 +3,7 @@
 
 Estudiante de **Ingeniería en Sistemas de Información en UTN, Facultad Regional Córdoba**, orientado a oportunidades como **Desarrollador Backend Java o Full Stack Junior**.
 
-Desarrollo aplicaciones web con foco en APIs REST, persistencia, seguridad y calidad. Entre mis proyectos destacados están **TPAI-Bolsines**, una aplicación académica de seguimiento GPS con Next.js y TypeScript, y **Cuestion.me**, una plataforma Full Stack con backend Spring Boot y servicios cloud.
+Desarrollo aplicaciones web con foco en APIs REST, arquitectura, persistencia, integración de servicios y calidad. Destaco **TPAI-Bolsines**, una aplicación Full Stack de seguimiento de envíos con tres proveedores GPS, mapa interactivo y patrón Adapter, y **Cuestion.me**, una plataforma con backend Spring Boot y servicios cloud.
 
 **[Conocer TPAI-Bolsines](https://github.com/Taboada-Ignacio/TPAI-Bolsines)** · **[Caso de estudio](projects/tpai-bolsines/README.md)** · **[GitHub](https://github.com/Taboada-Ignacio)**
 
@@ -12,15 +12,19 @@ Desarrollo aplicaciones web con foco en APIs REST, persistencia, seguridad y cal
 ## Proyectos destacados
 
 ### 01 · TPAI-Bolsines
-**Seguimiento de bolsines en mapa interactivo con integración GPS.**
+**Aplicación Full Stack de seguimiento GPS con arquitectura por capas, mapa interactivo y tres adaptadores.**
 
-Proyecto académico grupal de Diseño de Sistemas de Información (UTN FRC). Implementa el CU 36 para consultar bolsines en tránsito, visualizar su última ubicación y notificar por correo al destino cuando se confirma la acción.
+Trabajo académico grupal de Diseño de Sistemas de Información (UTN FRC). La versión final está en la rama **`main`** del repositorio. Implementa el **CU 36** para consultar bolsines enviados desde la comisión médica del empleado autenticado, ubicar cada envío y visualizar su recorrido entre origen y destino.
 
-- **Aplicación:** Next.js 16, React 19, TypeScript, Prisma y PostgreSQL 17.
-- **Diseño:** patrón Adapter para tres modelos GPS, separación de gestores, dominio y persistencia; mapa con MapLibre GL JS y OpenFreeMap.
-- **Alcance:** prototipo académico local con código público; sin demo de producción.
+- **Backend y datos:** Next.js 16 (Route Handlers), TypeScript, Prisma ORM 7 y PostgreSQL 17; sesiones, permisos por rol y reglas de negocio en gestores y entidades de dominio.
+- **Integración:** API GPS oficial de la cátedra; patrón Adapter con **XTR-4500L, QX-7A y MTR-900**, normalizando respuestas JSON, CSV y matrices.
+- **Dos recorridos:** el CU 36 original utiliza **XTR-4500L** fijo; una pantalla adicional permite elegir el modelo GPS mediante un gestor independiente, sin alterar el flujo evaluado.
+- **Experiencia:** React 19, MapLibre GL JS + OpenFreeMap, rutas de seguimiento, filtros y detalle de bolsines; interfaz responsive, animaciones GSAP y elementos 3D.
+- **Flujo complementario:** confirmación opcional de notificación por correo al gerente de la comisión de destino mediante **CU 31**; entorno local con Docker Compose y Mailpit.
 
-[Caso de estudio](projects/tpai-bolsines/README.md) · [Código público](https://github.com/Taboada-Ignacio/TPAI-Bolsines)
+**Alcance:** prototipo académico ejecutable localmente, con código público y sin demo de producción verificada.
+
+[Caso de estudio](projects/tpai-bolsines/README.md) · [Código fuente (rama main)](https://github.com/Taboada-Ignacio/TPAI-Bolsines/tree/main)
 
 ### 02 · SYZA · Estética integral
 **Landing comercial mobile-first para una marca de estética y bienestar.**
