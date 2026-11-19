@@ -3,15 +3,26 @@
 
 Estudiante de **Ingeniería en Sistemas de Información en UTN, Facultad Regional Córdoba**, orientado a oportunidades como **Desarrollador Backend Java o Full Stack Junior**.
 
-Desarrollo aplicaciones web con foco en APIs REST, persistencia, seguridad y calidad. Mi proyecto principal, **Cuestion.me**, integra un frontend React con un backend Spring Boot y servicios cloud para crear cuestionarios y acompañar la práctica académica.
+Desarrollo aplicaciones web con foco en APIs REST, persistencia, seguridad y calidad. Entre mis proyectos destacados están **TPAI-Bolsines**, una aplicación académica de seguimiento GPS con Next.js y TypeScript, y **Cuestion.me**, una plataforma Full Stack con backend Spring Boot y servicios cloud.
 
-**[Conocer Cuestion.me](https://www.cuestion-me.app)** · **[Caso de estudio](projects/cuestionme/README.md)** · **[GitHub](https://github.com/Taboada-Ignacio)**
+**[Conocer TPAI-Bolsines](https://github.com/Taboada-Ignacio/TPAI-Bolsines)** · **[Caso de estudio](projects/tpai-bolsines/README.md)** · **[GitHub](https://github.com/Taboada-Ignacio)**
 
 ---
 
 ## Proyectos destacados
 
-### 01 · Cuestion.me
+### 01 · TPAI-Bolsines
+**Seguimiento de bolsines en mapa interactivo con integración GPS.**
+
+Proyecto académico grupal de Diseño de Sistemas de Información (UTN FRC). Implementa el CU 36 para consultar bolsines en tránsito, visualizar su última ubicación y notificar por correo al destino cuando se confirma la acción.
+
+- **Aplicación:** Next.js 16, React 19, TypeScript, Prisma y PostgreSQL 17.
+- **Diseño:** patrón Adapter para tres modelos GPS, separación de gestores, dominio y persistencia; mapa con MapLibre GL JS y OpenFreeMap.
+- **Alcance:** prototipo académico local con código público; sin demo de producción.
+
+[Caso de estudio](projects/tpai-bolsines/README.md) · [Código público](https://github.com/Taboada-Ignacio/TPAI-Bolsines)
+
+### 02 · Cuestion.me
 **Plataforma Full Stack de cuestionarios y autoevaluación académica.**
 
 Permite organizar bancos de preguntas por contexto académico, publicar cuestionarios, practicar y revisar resultados. Integra creación manual, paquetes ZIP con Excel e imágenes, corrección automática y conservación del historial de evaluaciones.
@@ -24,23 +35,12 @@ Permite organizar bancos de preguntas por contexto académico, publicar cuestion
 
 > El código de Cuestion.me permanece privado. Este portafolio presenta su diseño y decisiones técnicas sin distribuir código fuente ni configuraciones sensibles.
 
-### 02 · Web Kuuii
+### 03 · Web Kuuii
 **Sitio comercial responsive para una distribuidora de agua y hielo.**
 
 Presenta productos, ubicación y vías de contacto por WhatsApp. Desarrollado con React, JavaScript, Bootstrap y CSS, con navegación por secciones y carga del mapa interactivo bajo demanda.
 
 [Demostración](https://first-web-site-proyect-kuuii.pages.dev/) · [Caso de estudio](projects/web-kuuii/README.md) · [Código público](https://github.com/Taboada-Ignacio/first-web-site-proyect-Kuuii)
-
-### 03 · TPAI-Bolsines
-**Seguimiento de bolsines en mapa interactivo con integración GPS.**
-
-Proyecto académico grupal de Diseño de Sistemas de Información (UTN FRC). Implementa el CU 36 para consultar bolsines en tránsito, visualizar su última ubicación y notificar por correo al destino cuando se confirma la acción.
-
-- **Aplicación:** Next.js 16, React 19, TypeScript, Prisma y PostgreSQL 17.
-- **Diseño:** patrón Adapter para tres modelos GPS, separación de gestores, dominio y persistencia; mapa con MapLibre GL JS y OpenFreeMap.
-- **Alcance:** prototipo académico local con código público; sin demo de producción.
-
-[Caso de estudio](projects/tpai-bolsines/README.md) · [Código público](https://github.com/Taboada-Ignacio/TPAI-Bolsines)
 
 ## Tecnologías aplicadas
 
