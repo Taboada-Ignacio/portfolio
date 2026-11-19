@@ -42,16 +42,27 @@ Presenta productos, ubicación y vías de contacto por WhatsApp. Desarrollado co
 
 [Demostración](https://first-web-site-proyect-kuuii.pages.dev/) · [Caso de estudio](projects/web-kuuii/README.md) · [Código público](https://github.com/Taboada-Ignacio/first-web-site-proyect-Kuuii)
 
+### 04 · SYZA · Estética integral
+**Landing comercial mobile-first para una marca de estética y bienestar.**
+
+Sitio web de presentación para SYZA, con identidad visual cálida, secciones de servicios, origen de la marca y contacto. El proyecto combina fotografía, animación y recursos 3D, con especial atención al diseño responsive y la experiencia en teléfonos.
+
+- **Frontend:** React, TypeScript, Vite y Tailwind CSS v4.
+- **Experiencia visual:** GSAP, Three.js, React Three Fiber, Drei y Lucide React.
+- **Alcance:** web estática preparada para Render; la gestión privada de turnos y la integración con Google Drive son etapas futuras, no funcionalidades disponibles en esta landing.
+
+[Caso de estudio](projects/syza/README.md)
+
 ## Tecnologías aplicadas
 
 | Área | Tecnologías |
 | --- | --- |
 | Backend | Java 25 · Spring Boot 4.1.1 · Spring Web MVC · Spring Security · Next.js 16 Route Handlers |
 | Persistencia | PostgreSQL 17 · JPA/Hibernate · Flyway · Prisma ORM 7 · SQL |
-| Frontend | React 19 · JavaScript · TypeScript · Next.js 16 · Vite 7 · Tailwind CSS 4 · Bootstrap 5 · MapLibre GL JS · OpenFreeMap |
+| Frontend | React 19 · JavaScript · TypeScript · Next.js 16 · Vite 7 · Tailwind CSS 4 · Bootstrap 5 · GSAP · Three.js · React Three Fiber · Drei · Lucide React · MapLibre GL JS · OpenFreeMap |
 | Seguridad | Sesiones · CSRF · Autorización por roles y recursos · Google OpenID Connect |
 | Calidad | JUnit 5 · Mockito · Testcontainers · Vitest · Pruebas del cliente con Node.js |
-| Cloud y entrega | Docker · Docker Compose · Nginx · GitHub Actions · Azure Container Apps · Azure Container Registry · Vercel · Neon · Cloudinary |
+| Cloud y entrega | Docker · Docker Compose · Nginx · GitHub Actions · Azure Container Apps · Azure Container Registry · Vercel · Render · Neon · Cloudinary |
 
 Las tecnologías se vinculan a los proyectos documentados; las versiones corresponden a las dependencias declaradas y configuraciones revisadas.
 
