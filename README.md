@@ -22,7 +22,18 @@ Proyecto académico grupal de Diseño de Sistemas de Información (UTN FRC). Imp
 
 [Caso de estudio](projects/tpai-bolsines/README.md) · [Código público](https://github.com/Taboada-Ignacio/TPAI-Bolsines)
 
-### 02 · Cuestion.me
+### 02 · SYZA · Estética integral
+**Landing comercial mobile-first para una marca de estética y bienestar.**
+
+Sitio web de presentación para SYZA, con identidad visual cálida, secciones de servicios, origen de la marca y contacto. El proyecto combina fotografía, animación y recursos 3D, con especial atención al diseño responsive y la experiencia en teléfonos.
+
+- **Frontend:** React, TypeScript, Vite y Tailwind CSS v4.
+- **Experiencia visual:** GSAP, Three.js, React Three Fiber, Drei y Lucide React.
+- **Alcance:** web estática preparada para Render; la gestión privada de turnos y la integración con Google Drive son etapas futuras, no funcionalidades disponibles en esta landing.
+
+[Caso de estudio](projects/syza/README.md)
+
+### 03 · Cuestion.me
 **Plataforma Full Stack de cuestionarios y autoevaluación académica.**
 
 Permite organizar bancos de preguntas por contexto académico, publicar cuestionarios, practicar y revisar resultados. Integra creación manual, paquetes ZIP con Excel e imágenes, corrección automática y conservación del historial de evaluaciones.
@@ -35,23 +46,12 @@ Permite organizar bancos de preguntas por contexto académico, publicar cuestion
 
 > El código de Cuestion.me permanece privado. Este portafolio presenta su diseño y decisiones técnicas sin distribuir código fuente ni configuraciones sensibles.
 
-### 03 · Web Kuuii
+### 04 · Web Kuuii
 **Sitio comercial responsive para una distribuidora de agua y hielo.**
 
 Presenta productos, ubicación y vías de contacto por WhatsApp. Desarrollado con React, JavaScript, Bootstrap y CSS, con navegación por secciones y carga del mapa interactivo bajo demanda.
 
 [Demostración](https://first-web-site-proyect-kuuii.pages.dev/) · [Caso de estudio](projects/web-kuuii/README.md) · [Código público](https://github.com/Taboada-Ignacio/first-web-site-proyect-Kuuii)
-
-### 04 · SYZA · Estética integral
-**Landing comercial mobile-first para una marca de estética y bienestar.**
-
-Sitio web de presentación para SYZA, con identidad visual cálida, secciones de servicios, origen de la marca y contacto. El proyecto combina fotografía, animación y recursos 3D, con especial atención al diseño responsive y la experiencia en teléfonos.
-
-- **Frontend:** React, TypeScript, Vite y Tailwind CSS v4.
-- **Experiencia visual:** GSAP, Three.js, React Three Fiber, Drei y Lucide React.
-- **Alcance:** web estática preparada para Render; la gestión privada de turnos y la integración con Google Drive son etapas futuras, no funcionalidades disponibles en esta landing.
-
-[Caso de estudio](projects/syza/README.md)
 
 ## Tecnologías aplicadas
 
