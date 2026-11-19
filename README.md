@@ -31,22 +31,33 @@ Presenta productos, ubicación y vías de contacto por WhatsApp. Desarrollado co
 
 [Demostración](https://first-web-site-proyect-kuuii.pages.dev/) · [Caso de estudio](projects/web-kuuii/README.md) · [Código público](https://github.com/Taboada-Ignacio/first-web-site-proyect-Kuuii)
 
+### 03 · TPAI-Bolsines
+**Seguimiento de bolsines en mapa interactivo con integración GPS.**
+
+Proyecto académico grupal de Diseño de Sistemas de Información (UTN FRC). Implementa el CU 36 para consultar bolsines en tránsito, visualizar su última ubicación y notificar por correo al destino cuando se confirma la acción.
+
+- **Aplicación:** Next.js 16, React 19, TypeScript, Prisma y PostgreSQL 17.
+- **Diseño:** patrón Adapter para tres modelos GPS, separación de gestores, dominio y persistencia; mapa con MapLibre GL JS y OpenFreeMap.
+- **Alcance:** prototipo académico local con código público; sin demo de producción.
+
+[Caso de estudio](projects/tpai-bolsines/README.md) · [Código público](https://github.com/Taboada-Ignacio/TPAI-Bolsines)
+
 ## Tecnologías aplicadas
 
 | Área | Tecnologías |
 | --- | --- |
-| Backend | Java 25 · Spring Boot 4.1.1 · Spring Web MVC · Spring Security |
-| Persistencia | PostgreSQL 17 · JPA/Hibernate · Flyway · SQL |
-| Frontend | React 19 · JavaScript · Vite 7 · Tailwind CSS 4 · Bootstrap 5 |
+| Backend | Java 25 · Spring Boot 4.1.1 · Spring Web MVC · Spring Security · Next.js 16 Route Handlers |
+| Persistencia | PostgreSQL 17 · JPA/Hibernate · Flyway · Prisma ORM 7 · SQL |
+| Frontend | React 19 · JavaScript · TypeScript · Next.js 16 · Vite 7 · Tailwind CSS 4 · Bootstrap 5 · MapLibre GL JS · OpenFreeMap |
 | Seguridad | Sesiones · CSRF · Autorización por roles y recursos · Google OpenID Connect |
-| Calidad | JUnit 5 · Mockito · Testcontainers · Pruebas del cliente con Node.js |
+| Calidad | JUnit 5 · Mockito · Testcontainers · Vitest · Pruebas del cliente con Node.js |
 | Cloud y entrega | Docker · Docker Compose · Nginx · GitHub Actions · Azure Container Apps · Azure Container Registry · Vercel · Neon · Cloudinary |
 
 Las tecnologías se vinculan a los proyectos documentados; las versiones corresponden a las dependencias declaradas y configuraciones revisadas.
 
 ## Competencias demostradas
 
-- **Arquitectura:** separar interfaz, API, reglas de negocio y persistencia; integrar servicios externos.
+- **Arquitectura:** separar interfaz, API, reglas de negocio y persistencia; integrar servicios externos mediante interfaces y el patrón Adapter.
 - **Datos:** diseñar transacciones y migraciones, conservar resultados históricos y controlar escrituras concurrentes.
 - **Seguridad:** validar permisos en el servidor, proteger escrituras con CSRF y validar archivos antes de persistirlos.
 - **Testing:** cubrir reglas, autorización, importación, historial y costos SQL con pruebas específicas.
