@@ -1,29 +1,34 @@
 # TPAI-Bolsines
 ### Seguimiento de bolsines con mapa interactivo e integración GPS
 
-[Código público](https://github.com/Taboada-Ignacio/TPAI-Bolsines) · [Volver al portafolio](../../README.md)
+[Código final en main](https://github.com/Taboada-Ignacio/TPAI-Bolsines/tree/main) · [Volver al portafolio](../../README.md)
 
 ## Resumen y contexto
 
 Proyecto académico grupal del Trabajo Práctico de Aplicación de Diseño de Sistemas de Información (3.er año de Ingeniería en Sistemas de Información, UTN Facultad Regional Córdoba). Implementa, entre otros flujos, el **CU 36: Consultar seguimiento de bolsines**.
 
-Un encargado de bolsines puede consultar los envíos en tránsito asociados a su comisión médica de origen, conocer su última posición GPS sobre un mapa y, si lo desea, notificar esa ubicación a la comisión médica de destino. El sistema integra una API GPS de la cátedra y servicios locales de persistencia y correo.
+Un encargado de bolsines puede consultar los envíos en tránsito asociados a su comisión médica de origen, conocer su última posición GPS sobre un mapa, explorar su recorrido hasta la comisión de destino y, si lo desea, notificar esa ubicación al gerente de destino. El sistema integra una API GPS de la cátedra y servicios locales de persistencia y correo.
+
+**Versión de referencia:** rama [`main`](https://github.com/Taboada-Ignacio/TPAI-Bolsines/tree/main) del repositorio público, que contiene la integración final de frontend y backend y un recorrido adicional con selección del proveedor GPS.
 
 **Alcance:** prototipo académico ejecutable en entorno local. No se presenta como producto de rastreo en producción ni como un sistema de seguridad empresarial.
 
 ## Mi participación y trabajo en equipo
 
-Participé en el diseño e implementación del flujo de seguimiento (CU 36), la aplicación del patrón Adapter para los modelos GPS y la integración de los datos de localización con la interfaz de mapa. La implementación se realizó en colaboración con el equipo del TPAI; el repositorio público contiene el trabajo compartido.
+Participé en el diseño e implementación del flujo de seguimiento (CU 36), la aplicación del patrón Adapter para los modelos GPS y la integración de los datos de localización con la interfaz de mapa. El proyecto se desarrolló en equipo y el repositorio público reúne el trabajo compartido. La extensión con selección de tracker está implementada en un gestor y una ruta propios para conservar el recorrido original exigido por la cátedra.
 
 ## Funcionalidades
 
-- Inicio y cierre de sesión académico para acceder a las pantallas protegidas.
-- Consulta de bolsines en estado **Enviado** cuyo origen corresponde a la comisión médica del empleado que inició sesión.
-- Presentación de posiciones GPS y fecha de última actualización en un mapa interactivo.
-- Selección de un bolsín para consultar su información, comisión de origen, ubicación y comisión de destino; filtros por precinto y destino.
-- Consulta del proveedor GPS a través de una interfaz común y adaptadores concretos.
-- Confirmación opcional de notificación al gerente de la comisión médica de destino mediante correo electrónico; Mailpit permite inspeccionar los envíos en desarrollo.
-- CRUD y catálogos técnicos de usuarios/empleados, comisiones, roles, estados y bolsines para respaldar el flujo académico.
+- Inicio y cierre de sesión, identificación del empleado y control de acceso al seguimiento según su rol.
+- Consulta de bolsines en estado **Enviado** cuya comisión médica de origen coincide con la del empleado autenticado.
+- Visualización de la última ubicación GPS y su fecha de actualización sobre un mapa; representación del recorrido **origen → ubicación actual → destino**.
+- Selección de un bolsín para consultar sus datos, precinto, origen y destino; filtros por precinto y comisión de destino.
+- **`/seguimiento`:** CU 36 original, que consulta exclusivamente el proveedor **XTR-4500L** con número de bolsín y código de comisión de origen.
+- **`/seguimiento/con-opcion-a-elegir`:** variante independiente con selector de **XTR-4500L, QX-7A o MTR-900** y un gestor propio, sin modificar el recorrido original.
+- Normalización de datos de GPS heterogéneos a un contrato común para el mapa y manejo de bolsines cuya ubicación no está disponible.
+- Confirmación opcional de notificación al gerente de la comisión médica de destino a través del caso de uso **CU 31**; Mailpit permite inspeccionar correos en desarrollo.
+- ABM y catálogos técnicos de empleados, comisiones, roles, estados y bolsines para respaldar el escenario académico.
+- Interfaz responsive con temas claro/oscuro, animaciones GSAP y representación 3D interactiva de un bolsín en el inicio de sesión.
 
 ## Tecnologías utilizadas
 
@@ -31,7 +36,7 @@ Participé en el diseño e implementación del flujo de seguimiento (CU 36), la 
 | --- | --- |
 | Aplicación web | Next.js 16 (App Router y Route Handlers) · React 19 · TypeScript estricto |
 | Persistencia | PostgreSQL 17 · Prisma ORM 7 · @prisma/adapter-pg · migraciones y datos de ejemplo |
-| Interfaz y cartografía | Tailwind CSS 4 · MapLibre GL JS · OpenFreeMap |
+| Interfaz y cartografía | Tailwind CSS 4 · MapLibre GL JS · OpenFreeMap · GSAP · Three.js · React Three Fiber · Drei |
 | Integraciones | API GPS oficial de la cátedra · servicios HTTP · Nodemailer · Mailpit |
 | Calidad | Vitest · Zod · ESLint · Prettier |
 | Entorno | Node.js 24 · Docker · Docker Compose |
@@ -42,9 +47,11 @@ Las versiones son las declaradas en el repositorio revisado; no implican una aud
 
 El frontend y los endpoints HTTP conviven en Next.js. Los Route Handlers funcionan como controladores; los gestores implementan el caso de uso; el dominio representa bolsines, estados, empleados y comisiones médicas; Prisma encapsula el acceso a PostgreSQL. Los DTO y las validaciones delimitan los datos intercambiados.
 
-**Patrón Adapter para GPS.** La frontera `InterfazGPSTracker` selecciona un adaptador concreto de acuerdo con el modelo. Se implementaron `AdaptadorXTR4500L`, `AdaptadorQX7A` y `AdaptadorMTR900`, cada uno conectado a su servicio de integración. Los formatos externos difieren (JSON, CSV y matriz), pero se normalizan a número de bolsín, latitud, longitud y fecha ISO 8601 UTC. El CU 36 principal utiliza el modelo **XTR-4500L** y los códigos de comisión médica de origen. La presencia de los otros adaptadores permite reutilizar la integración para otros flujos.
+**Patrón Adapter para GPS.** La frontera `InterfazGPSTracker` selecciona un adaptador concreto según el modelo. Se implementaron `AdaptadorXTR4500L`, `AdaptadorQX7A` y `AdaptadorMTR900`, cada uno conectado a su servicio HTTP de integración. Los formatos externos difieren (JSON, CSV y matriz), pero se normalizan a número de bolsín, latitud, longitud y fecha ISO 8601 UTC. XTR-4500L consulta con el código de CM de origen, QX-7A con el código de CM de destino y MTR-900 con el número de bolsín.
 
-**Fuente de las ubicaciones.** La API GPS oficial de la cátedra entrega las coordenadas. **MapLibre GL JS** representa los marcadores e interacciones; **OpenFreeMap** aporta el mapa base. No se usa la API ni el SDK de Google Maps para renderizar la pantalla de seguimiento. Las clases con nombres heredados del UML relacionadas con Google Maps conservan esos nombres por trazabilidad del diseño académico.
+**Dos gestores, sin alterar el CU evaluado.** `GestorConsultarUbicacionDeBolsin` mantiene **XTR-4500L** como constante y consulta por CM de origen. `GestorConsultarUbicacionesDeBolsinConSeleccion` implementa por separado la elección del proveedor y se expone en `/seguimiento/con-opcion-a-elegir`. Ambas pantallas reutilizan componentes de mapa y seguimiento, pero poseen rutas y gestores de consulta independientes.
+
+**Fuente de las ubicaciones.** La API GPS oficial de la cátedra entrega las coordenadas. **MapLibre GL JS** representa los marcadores, trazados e interacciones; **OpenFreeMap** aporta el mapa base. No se usa la API ni el SDK de Google Maps para renderizar la pantalla de seguimiento. Las clases con nombres heredados del UML relacionadas con Google Maps conservan esos nombres por trazabilidad del diseño académico.
 
 **Separación de responsabilidades.** La consulta del CU 36 obtiene y visualiza posiciones; la notificación por correo se delega a otro caso de uso y no ocurre hasta que la persona confirma la acción. La comisión de destino se emplea para mostrar el recorrido y localizar al destinatario del aviso, no para filtrar los bolsines del CU 36.
 
@@ -64,7 +71,7 @@ Los recorridos GPS dependen de que los identificadores y comisiones del conjunto
 
 ## Pruebas y evidencia
 
-El repositorio incluye pruebas con Vitest para dominio, autenticación, catálogos, Adapter GPS, seguimiento, notificación e integración de componentes. También proporciona comandos para validación Prisma, análisis de tipos TypeScript, lint, formato y compilación.
+El repositorio incluye pruebas con Vitest para dominio, autenticación, catálogos, Adapter GPS, seguimiento original y con selección de proveedor, notificación e integración de componentes. También proporciona comandos para validación Prisma, análisis de tipos TypeScript, lint, formato y compilación.
 
 **Esta incorporación al portafolio se basa en la documentación y los archivos del repositorio. No se ejecutó nuevamente la suite de pruebas ni un despliegue de la aplicación como parte de esta actualización.** Las pruebas HTTP externas del GPS requieren configurar y levantar el entorno de desarrollo.
 
@@ -76,6 +83,7 @@ El [plan de capturas](../../assets/tpai-bolsines/README.md) identifica imágenes
 
 - Traducción de casos de uso y diagramas UML a responsabilidades y contratos TypeScript.
 - Integración desacoplada de proveedores con formatos de respuesta heterogéneos.
+- Extensión de un caso de uso mediante un gestor independiente, preservando los contratos y el flujo de la evaluación.
 - Diseño de un mapa que asocia el dato de negocio con una posición geográfica y su instante de actualización.
 - Coordinación de frontend, dominio, servicios, persistencia y contenedores dentro de un trabajo grupal.
 
